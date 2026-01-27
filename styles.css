@@ -1,0 +1,200 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fdf6f8, #f8f3ed);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Fondo floral */
+.floral-bg {
+  position: fixed;
+  inset: 0;
+  background-image: 
+    url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=60");
+  opacity: 0.08;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+/* Animación de apertura de sobre */
+#sobre {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 200px;
+  background: #f5f5f5;
+  border: 2px solid #d3d3d3;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.flap {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background: #fff;
+  border: 1px solid #d3d3d3;
+  transition: transform 2s ease-in-out;
+}
+
+.top-flap {
+  top: 0;
+  transform-origin: bottom center;
+  animation: open-top 2s ease-in-out forwards;
+}
+
+.bottom-flap {
+  bottom: 0;
+  transform-origin: top center;
+  animation: open-bottom 2s ease-in-out forwards;
+}
+
+.sobre-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  color: #666;
+}
+
+@keyframes open-top {
+  0% { transform: rotateX(0deg); }
+  50% { transform: rotateX(-90deg); }
+  100% { transform: rotateX(-180deg); opacity: 0; }
+}
+
+@keyframes open-bottom {
+  0% { transform: rotateX(0deg); }
+  50% { transform: rotateX(90deg); }
+  100% { transform: rotateX(180deg); opacity: 0; }
+}
+
+/* Contenedor */
+.container {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+}
+
+/* Tarjeta con mejoras llamativas */
+.card {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 24px;
+  padding: 32px 26px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  backdrop-filter: blur(6px);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+/* Tipografía con animaciones */
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.6rem;
+  color: #6b2d5c;
+  letter-spacing: 1px;
+  animation: textGlow 2s ease-in-out infinite alternate;
+}
+
+h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  color: #9a6a7c;
+  margin-top: 4px;
+}
+
+@keyframes textGlow {
+  0% { text-shadow: 0 0 5px rgba(107, 45, 92, 0.3); }
+  100% { text-shadow: 0 0 15px rgba(107, 45, 92, 0.6); }
+}
+
+/* Línea decorativa */
+.divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #c89aa6, transparent);
+  margin: 18px auto;
+}
+
+/* Detalles */
+.details p {
+  margin: 10px 0;
+  font-size: 0.95rem;
+  color: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.details p:hover {
+  color: #b36b7c;
+}
+
+.details i {
+  color: #b36b7c;
+}
+
+/* Botón con mejoras */
+#btnWhatsapp {
+  margin-top: 20px;
+  width: 100%;
+  padding: 13px 18px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #25D366, #1ebe5d);
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+}
+
+#btnWhatsapp:hover {
+  background: linear-gradient(135deg, #1ebe5d, #25D366);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+}
+
+canvas {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999 !important;
+}
