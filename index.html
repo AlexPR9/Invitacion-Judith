@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación Cumpleaños 80 Años</title>
+
+  <!-- Tipografías elegantes -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- AOS para animaciones suaves -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <!-- Fondo floral -->
+  <div class="floral-bg"></div>
+
+  <!-- Animación de apertura de sobre (2 segundos) -->
+  <div id="sobre">
+    <div class="flap top-flap"></div>
+    <div class="flap bottom-flap"></div>
+    <div class="sobre-content">Abriendo invitación...</div>
+  </div>
+
+  <!-- Contenedor principal (oculto inicialmente) -->
+  <div class="container" id="invitacion" style="display: none;">
+    <div class="card" data-aos="fade-up" data-aos-duration="1000">
+      <h1 data-aos="fade-down" data-aos-delay="200">Judith</h1>
+      <h2 data-aos="fade-down" data-aos-delay="400">80 años</h2>
+
+      <div class="divider" data-aos="zoom-in" data-aos-delay="600"></div>
+
+      <div class="details">
+        <p data-aos="fade-right" data-aos-delay="800"><i class="fa-solid fa-calendar-days"></i> Domingo 15 de febrero</p>
+        <p data-aos="fade-right" data-aos-delay="1000"><i class="fa-solid fa-clock"></i> 6:00 PM</p>
+        <p data-aos="fade-right" data-aos-delay="1200"><i class="fa-solid fa-location-dot"></i> Saloncito de la casa de la tía Paty</p>
+        <p data-aos="fade-right" data-aos-delay="1400"><i class="fa-solid fa-map"></i> San Agustín #18 Barrios de Arboledas</p>
+      </div>
+
+      <button id="btnWhatsapp" data-aos="fade-up" data-aos-delay="1600">
+        <i class="fa-brands fa-whatsapp"></i>
+        Confirmar asistencia
+      </button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
